@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research — Nexus Sequence Labs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <a href="/" class="logo-link">
+      <img src="/assets/logo.png" alt="Nexus Sequence Labs">
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/research/">Research</a>
+      <a href="/about/">About</a>
+      <a href="/compliance/">Compliance</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Research Notes</h2>
+    <p style="margin-bottom: 2rem; color: var(--text-muted);">Articles and notes published for laboratory research reference only.</p>
+    <div class="posts-grid">
+      <article class="post-card">
+        <h3>Sample Research Note</h3>
+        <p>Placeholder. New posts from Decap CMS or your bot pipeline will appear here once the listing is wired.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>FOR RESEARCH USE ONLY — NOT FOR HUMAN USE</strong></p>
+    <p>© <span id="year"></span> Nexus Sequence Labs</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
