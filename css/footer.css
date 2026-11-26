@@ -1,0 +1,52 @@
+/* Add to existing styles.css - footer and socials */
+.socials {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.socials a {
+  color: var(--gold);
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.socials a:hover { opacity: 1; }
+
+footer {
+  background: #000;
+  border-top: 1px solid var(--border);
+  padding: 3rem 2rem 2rem;
+  margin-top: 4rem;
+  font-size: 0.85rem;
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-grid h4 {
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-grid a, .footer-grid p {
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  color: var(--text-muted);
+}

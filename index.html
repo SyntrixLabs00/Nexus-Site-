@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Sequence Labs — Research Without the Noise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/assets/logo.png">
+</head>
+<body>
+  <div class="age-gate" id="ageGate">
+    <div class="age-gate-box">
+      <h2>Age Verification Required</h2>
+      <p>This website contains information about research compounds. You must be 21 years of age or older to enter.</p>
+      <label>
+        <input type="checkbox" id="ageCheck">
+        <span>I confirm that I am 21 years of age or older. I am accessing this site solely for laboratory research purposes. I understand that all materials discussed are for research use only and not for human or veterinary consumption.</span>
+      </label>
+      <button id="ageEnter" disabled>Enter Site</button>
+    </div>
+  </div>
+
+  <header>
+    <a href="/" class="logo-link"><img src="/assets/logo.png" alt="Nexus Sequence Labs"></a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/research/">Research</a>
+      <a href="/reference/">Reference</a>
+      <a href="/certificates/">Certificates</a>
+      <a href="/about/">About</a>
+      <a href="/compliance/">Compliance</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="/assets/logo.png" alt="Nexus Sequence Labs Emblem" class="logo-large">
+    <h1>NEXUS SEQUENCE LABS</h1>
+    <p class="tagline">Research Without the Noise</p>
+    <div class="disclaimer">
+      <strong>FOR RESEARCH USE ONLY. NOT FOR HUMAN CONSUMPTION.</strong><br>
+      All information on this site is intended solely for qualified laboratory research. Not for human or veterinary use.
+    </div>
+  </section>
+
+  <section>
+    <h2>Featured Research Compounds</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="badge">RESEARCH USE ONLY</div>
+        <h3>BPC-157</h3>
+        <p>Synthetic pentadecapeptide studied in laboratory models for tissue and recovery research.</p>
+      </article>
+      <article class="card">
+        <div class="badge">RESEARCH USE ONLY</div>
+        <h3>TB-500</h3>
+        <p>Thymosin beta-4 fragment examined in preclinical research involving cellular migration.</p>
+      </article>
+      <article class="card">
+        <div class="badge">RESEARCH USE ONLY</div>
+        <h3>GHK-Cu</h3>
+        <p>Copper-binding tripeptide used in laboratory studies of skin and tissue models.</p>
+      </article>
+      <article class="card">
+        <div class="badge">RESEARCH USE ONLY</div>
+        <h3>Retatrutide</h3>
+        <p>Triple receptor agonist compound investigated in metabolic research settings.</p>
+      </article>
+    </div>
+    <p style="text-align:center; margin-top:2rem;"><a href="/research/">View all research compounds →</a></p>
+  </section>
+
+  <footer>
+    <p><strong>NEXUS SEQUENCE LABS</strong> — Research Without the Noise</p>
+    <p style="margin-top:0.75rem;"><strong>FOR RESEARCH USE ONLY — NOT FOR HUMAN USE</strong></p>
+    <p>© <span id="year"></span> Nexus Sequence Labs. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const gate = document.getElementById('ageGate');
+    const check = document.getElementById('ageCheck');
+    const enter = document.getElementById('ageEnter');
+    if (localStorage.getItem('nsl_age_verified') === 'true') gate.classList.add('hidden');
+    check.addEventListener('change', () => enter.disabled = !check.checked);
+    enter.addEventListener('click', () => {
+      if (check.checked) {
+        localStorage.setItem('nsl_age_verified', 'true');
+        gate.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>

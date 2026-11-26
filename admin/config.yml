@@ -1,0 +1,18 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: "compounds"
+    label: "Research Compounds"
+    folder: "content/compounds"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Short Description", name: "summary", widget: "text" }
+      - { label: "Details", name: "body", widget: "markdown", required: false }
+      - { label: "Category", name: "category", widget: "string", required: false }
