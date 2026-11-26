@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Nexus Sequence Labs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="age-gate" id="ageGate">
+    <div class="age-gate-box">
+      <h2>Age Verification Required</h2>
+      <p>This website contains information about research compounds. You must be 21 years of age or older to enter.</p>
+      <label>
+        <input type="checkbox" id="ageCheck">
+        <span>I confirm that I am 21 years of age or older. I am accessing this site solely for laboratory research purposes. I understand that all materials discussed are for research use only and not for human or veterinary consumption.</span>
+      </label>
+      <button id="ageEnter" disabled>Enter Site</button>
+    </div>
+  </div>
+
+  <header>
+    <a href="/" class="logo-link"><img src="/assets/logo.png" alt="Nexus Sequence Labs"></a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/shop/">Shop</a>
+      <a href="/research/">Research</a>
+      <a href="/reference/">Reference</a>
+      <a href="/contact/">Contact</a>
+      <a href="/compliance/">Compliance</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Contact</h2>
+    <p style="color:var(--text-muted); max-width:640px; margin-bottom:2rem;">
+      Nexus Sequence Labs is a small, focused research supplier. We expand inventory based on researcher requests and careful evaluation of compounds and suppliers.
+    </p>
+
+    <div class="cards" style="grid-template-columns:1fr; max-width:600px;">
+      <article class="card">
+        <h3>Email</h3>
+        <p><a href="mailto:support@nexussequencelabs.com">support@nexussequencelabs.com</a></p>
+        <p style="margin-top:0.5rem; font-size:0.9rem; color:var(--text-muted);">For research inquiries, availability, or documentation questions.</p>
+      </article>
+      <article class="card">
+        <h3>X (Twitter)</h3>
+        <p><a href="https://x.com/NexusSequence" target="_blank" rel="noopener">@NexusSequence</a></p>
+        <p style="margin-top:0.5rem; font-size:0.9rem; color:var(--text-muted);">Updates and research notes. Placeholder — replace with your real handle.</p>
+      </article>
+    </div>
+
+    <div class="ruo-box" style="margin-top:2.5rem;">
+      <strong>FOR RESEARCH USE ONLY.</strong><br>
+      We do not provide medical advice or human-use guidance.
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>FOR RESEARCH USE ONLY — NOT FOR HUMAN USE</strong></p>
+    <p>© <span id="year"></span> Nexus Sequence Labs</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const gate = document.getElementById('ageGate');
+    const check = document.getElementById('ageCheck');
+    const enter = document.getElementById('ageEnter');
+    if (localStorage.getItem('nsl_age_verified') === 'true') gate.classList.add('hidden');
+    check.addEventListener('change', () => enter.disabled = !check.checked);
+    enter.addEventListener('click', () => {
+      if (check.checked) {
+        localStorage.setItem('nsl_age_verified', 'true');
+        gate.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
