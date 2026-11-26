@@ -6,14 +6,13 @@ media_folder: assets/uploads
 public_folder: /assets/uploads
 
 collections:
-  - name: "posts"
-    label: "Research Posts"
-    folder: "content/posts"
+  - name: "compounds"
+    label: "Research Compounds"
+    folder: "content/compounds"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Summary", name: "summary", widget: "text" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Short Description", name: "summary", widget: "text" }
+      - { label: "Details", name: "body", widget: "markdown", required: false }
+      - { label: "Category", name: "category", widget: "string", required: false }

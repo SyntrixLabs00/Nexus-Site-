@@ -9,11 +9,7 @@
   --border: rgba(212, 175, 55, 0.25);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body {
   background: var(--bg);
@@ -23,20 +19,14 @@ html, body {
   min-height: 100vh;
 }
 
-a {
-  color: var(--gold);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--gold-bright);
-}
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--gold-bright); }
 
 header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(5, 5, 5, 0.9);
+  background: rgba(5, 5, 5, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding: 1rem 2rem;
@@ -45,16 +35,8 @@ header {
   align-items: center;
 }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.logo-link img {
-  height: 48px;
-  width: auto;
-}
+.logo-link { display: flex; align-items: center; gap: 0.75rem; }
+.logo-link img { height: 48px; width: auto; }
 
 nav a {
   margin-left: 1.5rem;
@@ -65,7 +47,7 @@ nav a {
 }
 
 .hero {
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,14 +70,14 @@ nav a {
 }
 
 .hero img.logo-large {
-  width: min(420px, 80vw);
+  width: min(380px, 75vw);
   height: auto;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.4));
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   background: linear-gradient(180deg, #fff 0%, var(--gold-bright) 50%, var(--gold) 100%);
@@ -105,85 +87,153 @@ nav a {
 }
 
 .tagline {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: var(--gold);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-.disclaimer {
-  max-width: 640px;
+.disclaimer, .ruo-box {
+  max-width: 680px;
   font-size: 0.9rem;
   color: var(--text-muted);
   border: 1px solid var(--border);
   padding: 1rem 1.5rem;
-  margin-top: 2rem;
+  margin: 1.5rem auto;
   background: rgba(0,0,0,0.4);
+  text-align: center;
 }
 
 section {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 3.5rem 2rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--gold);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   border-bottom: 1px solid var(--border);
   padding-bottom: 0.5rem;
 }
 
-.posts-grid {
+.cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
 }
 
-.post-card {
+.card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   padding: 1.5rem;
   transition: border-color 0.2s, transform 0.2s;
 }
 
-.post-card:hover {
+.card:hover {
   border-color: var(--gold);
   transform: translateY(-2px);
 }
 
-.post-card h3 {
+.card h3 {
   color: var(--gold-bright);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.2rem;
 }
 
-.post-card p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 0.15rem 0.5rem;
+  margin-bottom: 0.75rem;
 }
+
+.card p { color: var(--text-muted); font-size: 0.92rem; }
 
 footer {
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 2.5rem 2rem;
   border-top: 1px solid var(--border);
   color: var(--text-muted);
   font-size: 0.85rem;
 }
 
-footer strong {
-  color: var(--gold);
+footer strong { color: var(--gold); }
+
+/* Age Gate */
+.age-gate {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.96);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
+.age-gate.hidden { display: none; }
+
+.age-gate-box {
+  background: var(--bg-elevated);
+  border: 1px solid var(--gold);
+  max-width: 500px;
+  width: 100%;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.age-gate-box h2 {
+  color: var(--gold);
+  border: none;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.age-gate-box p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
+
+.age-gate-box label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.age-gate-box input[type="checkbox"] {
+  margin-top: 0.25rem;
+  accent-color: var(--gold);
+  min-width: 18px;
+}
+
+.age-gate-box button {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 0.9rem 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+.age-gate-box button:disabled { opacity: 0.4; cursor: not-allowed; }
+
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  nav a {
-    margin: 0 0.75rem;
-  }
+  header { flex-direction: column; gap: 1rem; }
+  nav a { margin: 0 0.6rem; }
 }
