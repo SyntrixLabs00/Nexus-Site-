@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BPC-157 — Nexus Sequence Labs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="age-gate" id="ageGate">
+    <div class="age-gate-box">
+      <h2>Age Verification Required</h2>
+      <p>You must be 21 years of age or older to enter.</p>
+      <label><input type="checkbox" id="ageCheck"><span>I confirm I am 21+ and accessing for laboratory research purposes only.</span></label>
+      <button id="ageEnter" disabled>Enter Site</button>
+    </div>
+  </div>
+
+  <header>
+    <a href="/" class="logo-link"><img src="/assets/logo.png" alt="Nexus Sequence Labs"></a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/shop/">Shop</a>
+      <a href="/research/">Research</a>
+      <a href="/reference/">Reference</a>
+      <a href="/certificates/">Certificates</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+      <a href="/compliance/">Compliance</a>
+    </nav>
+    <div class="socials">
+      <a href="https://x.com/NexusSequence" target="_blank" title="X">𝕏</a>
+      <a href="mailto:support@nexussequencelabs.com" title="Email">✉</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="badge">RESEARCH USE ONLY</div>
+    <h2>BPC-157</h2>
+    <p style="color:var(--text-muted); margin-bottom:1.5rem;">Synthetic pentadecapeptide · Laboratory research reference</p>
+    <div class="card" style="max-width:800px;">
+      <p>BPC-157 is a synthetic 15-amino-acid peptide sequence derived from a protective protein found in gastric juice. In laboratory and animal research models it has been studied for effects on tissue integrity, angiogenesis, inflammatory signaling, and cellular repair pathways.</p>
+      <p style="margin-top:1rem;">Research interest has focused on tendon, ligament, muscle, and gastrointestinal models. The compound is noted in the literature for relative stability in acidic environments. All discussion here is limited to published research contexts.</p>
+      <p style="margin-top:1rem;"><strong>Not for human or veterinary use.</strong></p>
+    </div>
+    <p style="margin-top:2rem;"><a href="/research/">← Back to Research</a> · <a href="/shop/">View in Shop</a></p>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Nexus Sequence Labs</h4>
+        <p>Research Without the Noise.</p>
+        <p>Small, focused research supplier.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <a href="/shop/">Shop</a>
+        <a href="/research/">Research</a>
+        <a href="/reference/">Reference</a>
+        <a href="/certificates/">Certificates</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="/legal/disclaimer/">Disclaimer</a>
+        <a href="/legal/privacy/">Privacy</a>
+        <a href="/legal/terms/">Terms</a>
+        <a href="/compliance/">Compliance</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:support@nexussequencelabs.com">support@nexussequencelabs.com</a>
+        <a href="https://x.com/NexusSequence" target="_blank">X / Twitter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><strong>FOR RESEARCH USE ONLY — NOT FOR HUMAN USE</strong></p>
+      <p>© <span id="year"></span> Nexus Sequence Labs. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const gate = document.getElementById('ageGate');
+    const check = document.getElementById('ageCheck');
+    const enter = document.getElementById('ageEnter');
+    if (localStorage.getItem('nsl_age_verified') === 'true') gate.classList.add('hidden');
+    check.addEventListener('change', () => enter.disabled = !check.checked);
+    enter.addEventListener('click', () => { if (check.checked) { localStorage.setItem('nsl_age_verified', 'true'); gate.classList.add('hidden'); } });
+  </script>
+</body>
+</html>
